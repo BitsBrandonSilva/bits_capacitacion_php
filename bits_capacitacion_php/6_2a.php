@@ -9,25 +9,20 @@ $strings = [
    $longitud = count($strings);
    
    for($i = 0; $i < $longitud; $i++) {
-        echo strlen($strings[0]) . " Cadena 1 <br>";
-        echo strlen($strings[1]) . " Cadena 2 <br>";
-        echo strlen($strings[2]) . " Cadena 3 <br>";
-        echo strlen($strings[0]) + strlen($strings[1]) + strlen($strings[2]) . " Total caracteres <br><br>";
-        echo "La longitud de la cadena 1 es de " . strlen(preg_replace("/^(\s)/", "", $strings[0])) . " sin espacios al inicio y al final<br>";
-        echo "La longitud de la cadena 2 es de " . strlen(preg_replace("/(\s$)/", "", $strings[1])) . " sin espacios al inicio y al final<br>";
-        echo strlen($strings[2]) . " Cadena 3 No tiene espacios al inicio y al final <br><br>";
-        echo "Hay " . substr_count($strings[0], ' ') . " espacios en la cadena 1<br>";
-        echo "Hay " . substr_count($strings[1], ' ') . " espacios en la cadena 2<br>";
-        echo "Hay " . substr_count($strings[2], ' ') . " espacios en la cadena 3<br>";
-        echo "El total de espacios de las tres cadenas es: "; echo substr_count($strings[0], ' ') + substr_count($strings[1], ' ') + substr_count($strings[2], ' ') . "<br><br>";
-        echo preg_replace("/drupal/i", "<strong>Drupal</strong>", $strings[0]) . "<br><br>";
-        echo preg_replace("/drupal/i", "<strong>Drupal</strong>", $strings[1]) . "<br><br>";
-        echo preg_replace("/drupal/i", "<strong>Drupal</strong>", $strings[2]) . "<br><br>";
-        echo "La palabra (Drupal) esta " . substr_count(preg_replace("/drupal/i", "Drupal", $strings[0]), 'Drupal') . " veces en la cadena 1 <br><br>";
-        echo "La palabra (Drupal) esta " . substr_count(preg_replace("/drupal/i", "Drupal", $strings[1]), 'Drupal') . " veces en la cadena 2 <br><br>";
-        echo "La palabra (Drupal) esta " . substr_count(preg_replace("/drupal/i", "Drupal", $strings[2]), 'Drupal') . " veces en la cadena 3 <br><br>";
-        echo "El total de veces que aparece la palabra (Drupal) en las tres cadenas es: ";
-        echo substr_count(preg_replace("/drupal/i", "Drupal", $strings[0]), 'Drupal') + substr_count(preg_replace("/drupal/i", "Drupal", $strings[1]), 'Drupal') + substr_count(preg_replace("/drupal/i", "Drupal", $strings[2]), 'Drupal') . "<br><br>";
-        break;
+        
+        
+     echo strlen($strings[$i]) . " Cadena ". ($i+1) . "<br>";
+     echo "<br>";
+     echo "La longitud de la cadena " . ($i+1) . " es de " . strlen(preg_replace("/^(\s)/", "", $strings[$i])) . " sin espacios al inicio <br>";
+     echo "La longitud de la cadena " . ($i+1) . " es de " . strlen(preg_replace("/(\s$)/", "", $strings[$i])) . " sin espacios al final <br>";
+     echo "Hay " . substr_count($strings[$i], ' ') . " espacios en la cadena " . ($i+1) . "<br>";
+     echo preg_replace("/drupal/i", "<strong>Drupal</strong>", $strings[$i]) . "<br>";
+     echo "La palabra (Drupal) esta " . substr_count(preg_replace("/drupal/i", "Drupal", $strings[$i]), 'Drupal') . " veces en la cadena " . ($i+1) . " <br><br>";
+             
    };
+     echo strlen($strings[0]) + strlen($strings[1]) + strlen($strings[2]) . " Total caracteres en las tres cadenas <br><br>";
+     echo "El total de espacios de las tres cadenas es: "; echo substr_count($strings[0], ' ') + substr_count($strings[1], ' ') + substr_count($strings[2], ' ') . "<br><br>";
+     echo "El total de veces que aparece la palabra (Drupal) en las tres cadenas es: ";
+     echo substr_count(preg_replace("/drupal/i", "Drupal", $strings[0]), 'Drupal') + substr_count(preg_replace("/drupal/i", "Drupal", $strings[1]), 'Drupal') + substr_count(preg_replace("/drupal/i", "Drupal", $strings[2]), 'Drupal') . "<br><br>";
+
 ?>
