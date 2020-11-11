@@ -25,10 +25,6 @@
 
     //--------------Punto 3
     sort($numbers);
-    foreach($numbers as $numeros) {
-        echo $numeros . "<br>";
-    };
-    echo "<br><br>";
 
     //--------------Punto 4
     $morenumbers = explode(":" , $cadena);
@@ -38,11 +34,7 @@
 
     //--------------Punto 6
     rsort($numbers);
-    foreach($numbers as $allNumeros) {
-        echo $allNumeros . "<br>";
-    };
-    echo "<br>";
-
+    
     //--------------Punto 7
     print_r($numbers);
     
