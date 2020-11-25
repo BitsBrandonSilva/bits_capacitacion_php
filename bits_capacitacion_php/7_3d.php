@@ -42,4 +42,10 @@
     print $truck1->accelerate($truck1->getCurrentSpeed(), $truck1->getFuelLevel(), 2) . "<br>";
     print $truck1->accelerate($truck1->getCurrentSpeed(), $truck1->getFuelLevel(), 3) . "<br>";
 
+    //---------------------------------Se obtiene lista de Vehiculos
+    $car1 = new Car();
+    print $car1->getType() . "<br>";
+    print $motorbaike1->getType() . "<br>";
+    print $truck1->getType() . "<br>";
+
 ?>
