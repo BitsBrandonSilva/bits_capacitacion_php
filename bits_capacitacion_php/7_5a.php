@@ -2,43 +2,45 @@
 
     interface Codify {
 
-        public function encode($data);
+        public function encode();
 
-        public function decode($data);
+        public function decode();
 
     }
 
     
 
     class Serialize implements Codify {
-        
-        public function encode($data) {
-            return json_encode();
+
+        public function encode($data = false) {
+            return print json_encode($data) . "<br>";
         }
 
-        public function decode($data) {
-            print serialize($data) . "<br><br>";
+        public function decode($data = false) {
+            return print serialize($data) . "<br><br>";
         }
-
     }
 
     class Json implements Codify {
 
-        public function encode($data) {
-            print json_encode($data) . "<br>";
+        public function encode($data = false) {
+            return print json_encode($data) . "<br>";
         }
 
-        public function decode($data) {
-            return serialize();
+        public function decode($data = false) {
+            return print serialize($data) . "<br><br>";
         }
-        
+
     }
-    
-    $data = ['apples' => ['red' => 5, 'green' => 23], 'oranges' => 12, 'pears' => 'Not available'];
 
+    $data = ['apples' => ['red' => 5, 'green' => 23], 'oranges' => 12, 'pears' => 'Not available'];
+    
     $serialize = new serialize();
+    $serialize->encode($data);
     $serialize->decode($data);
 
     $json = new Json();
     $json->encode($data);
+    $json->decode($data);
+    
 ?>
