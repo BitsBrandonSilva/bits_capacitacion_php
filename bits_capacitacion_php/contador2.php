@@ -1,6 +1,9 @@
 <?php
 
-    include_once("libreria.php");
+    /**
+     * Ejercicio contador2.php
+     */
+    require_once "libreria.php";
 
     $contador2 = 0;
 
