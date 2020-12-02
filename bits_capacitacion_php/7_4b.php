@@ -1,22 +1,40 @@
 <?php
 
-    require('7_4a.php');
-    class Cat extends Pet {
+    /**
+     * Ejercicio 7_4b
+     */
+    require '7_4a.php';
 
-        private $name = "";
-        public static $max_feed = "5";
-        private $feed = "0";
+    /**
+     * Clase Cat que hereda de Pet
+     */
+class Cat extends Pet {
 
-        public function __construct($name, $age) {
-            parent::__construct($age);
-            $this->name = 'Rocky';
-            $this->age = 2;
-        }
+    private $_name = "";
+    public static $max_feed = "5";
+    private $_feed = "0";
 
-        public function feed($quantity) {
-            $this->feed = $this->feed + $quantity;
-            return $this->feed;
-        }
+    /**
+     * Funcion constructor
+     */
+    public function __construct($_name, $age) 
+    {
+        parent::__construct($age);
+        $this->name = 'Rocky';
+        $this->age = 2;
     }
+
+    /**
+     * Funcion feed
+     * 
+     * @return feed
+     */
+    public function feed($quantity)
+    {
+        $this->feed = $this->feed + $quantity;
+        return $this->feed;
+    }
+
+}
 
 ?>
