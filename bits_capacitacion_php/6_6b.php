@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Ejercicio 6_6b
+     */
     $string = "aabCcCCddDDeFFgGGhhhhIJJkLLmmmmnOpQrrrSssTTUV";
 
     $coincidencias = preg_match_all("/[a-z]{2}[A-Z]{2,}/", $string, $matches);
