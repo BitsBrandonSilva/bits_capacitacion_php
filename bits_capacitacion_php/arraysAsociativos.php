@@ -1,6 +1,8 @@
 <?php
 
-    //---------- Asignacion elemento a elemento
+    /**
+     * Asignacion elemento a elemento
+     */
     $prefijo ["Alemania"] = 49;
     $prefijo ["Argentina"] = 54;
     $prefijo ["Colombia"] = 57;
@@ -30,4 +32,5 @@
 
     echo "El prefijo para llamar a Alemania es " . $prefijo["Alemania"] . "<br>";
     echo "El prefijo para llamar a Colombia es " . $prefijo["Colombia"] . "<br>";
-?>
+    
+    ?>
