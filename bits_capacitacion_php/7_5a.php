@@ -1,39 +1,88 @@
 <?php
 
-    interface Codify {
+/**
+ * Ejercicio 7_5a
+ */
 
-        public function encode();
+/**
+ * Interfaz Codify
+ */
+interface Codify
+{
+    /**
+     * Funcion enconde
+     * 
+     * @return json
+     */
+    public function encode();
 
-        public function decode();
+    /**
+     * Funcio decode
+     * 
+     * @return serialize
+     */
+    public function decode();
 
-    }
+}
 
     
+/**
+ * Clase serializa que implementa a Codify
+ */
+class Serialize implements Codify
+{
 
-    class Serialize implements Codify {
-
-        public function encode($data = false) {
-            return print json_encode($data) . "<br>";
-        }
-
-        public function decode($data = false) {
-            return print serialize($data) . "<br><br>";
-        }
+    /**
+     * Definicion funcion encode
+     * 
+     * @return json
+     */
+    public function encode($data = false)
+    {
+        return print json_encode($data) . "<br>";
     }
 
-    class Json implements Codify {
-
-        public function encode($data = false) {
-            return print json_encode($data) . "<br>";
-        }
-
-        public function decode($data = false) {
-            return print serialize($data) . "<br><br>";
-        }
-
+    /**
+     * Definicion funcion decode
+     * 
+     * @return serialize
+     */
+    public function decode($data = false)
+    {
+        return print serialize($data) . "<br><br>";
     }
 
-    $data = ['apples' => ['red' => 5, 'green' => 23], 'oranges' => 12, 'pears' => 'Not available'];
+}
+
+/**
+ * Clase json que implementa a Codify
+ */
+class Json implements Codify
+{
+    /**
+     * Definicion funcion encode
+     * 
+     * @return json
+     */
+    public function encode($data = false)
+    {
+        return print json_encode($data) . "<br>";
+    }
+
+    /**
+     * Definicion funcion decode
+     * 
+     * @return serialize
+     */
+    public function decode($data = false)
+    {
+        return print serialize($data) . "<br><br>";
+    }
+
+}
+
+    $data = ['apples' => ['red' => 5, 'green' => 23], 
+    'oranges' => 12, 'pears' => 'Not available'];
     
     $serialize = new serialize();
     $serialize->encode($data);
@@ -43,4 +92,4 @@
     $json->encode($data);
     $json->decode($data);
     
-?>
+    ?>
