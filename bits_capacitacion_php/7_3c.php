@@ -1,23 +1,45 @@
 <?php
 
-    require_once('7_1a.php');
+    require_once '7_1a.php';
     use Php\Vehicles;
 
-    class Truck extends Vehicles\Vehicle {
+    /**
+     * Clase que hereda de Vehicles
+     */
+class Truck extends Vehicles\Vehicle
+{
+    public $type = "Truck";
 
-        public $type = "Truck";
-
-        public function getType() {
-            return $this->type;
-        }
-
-        public function setType($type) {
-            $this->type = $type;
-        }
-
-        public function slowDown($current_speed) {
-            $current_speed = $current_speed - 0.5;
-            return "La velociadad se ha decrementado " . $current_speed;
-        }
+    /**
+     * Funcion getType
+     * 
+     * @return type
+     */
+    public function getType()
+    {
+        return $this->type;
     }
+
+    /**
+     * Funcion setType
+     * 
+     * @return type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Funcion slowDown
+     * 
+     * @return slowDown
+     */
+    public function slowDown($current_speed)
+    {
+        $current_speed = $current_speed - 0.5;
+        return "La velociadad se ha decrementado " . $current_speed;
+    }
+}
+
 ?>
