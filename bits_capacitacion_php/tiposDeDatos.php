@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Tipos de datos numericos
+     */
     $num1 = 31;
     $num2 = 25.5;
 
