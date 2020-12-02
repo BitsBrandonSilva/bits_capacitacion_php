@@ -1,6 +1,10 @@
 <?php
-    $fecha = date ("d/m/y");
-    $hora = date ("h:i:s");
+
+    /**
+     * Obtener fecha y hora
+     */
+    $fecha = date("d/m/y");
+    $hora = date("h:i:s");
 ?>
 
 <!DOCTYPE html>
