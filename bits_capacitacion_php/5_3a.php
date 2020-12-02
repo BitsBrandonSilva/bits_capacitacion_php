@@ -1,6 +1,8 @@
 <?php
 
-    //---------- Arreglo multidimensional con indices asociativos 
+    /**
+     * Arreglo multidimensional con indices asociativos
+     */  
     $peliculas = [
         [
             "identificador" => 1,
@@ -37,7 +39,7 @@
 
     //-----------------Estructura Ciclo Foreach que cuenta las peliculas
     $cont = 0;
-    foreach($peliculas as $movie) {
+    foreach ($peliculas as $movie) {
         $cont = $cont + 1;
     }
 
@@ -73,7 +75,7 @@
 
     //--------------------Estructura de repeticion que muestra las peliculas
     echo "Las peliculas son: <br><br>";
-    foreach($peliculas as $movie) {
+    foreach ($peliculas as $movie) {
         echo $movie["titulo"] . "<br>";
     }
-?>
+    ?>
