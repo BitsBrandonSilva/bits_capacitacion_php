@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Ejercicio 6_6a
+     */
     $users = [
         3 => 'foo', 
         24 => 'boB654', 
@@ -11,4 +14,4 @@
     
     print_r($output);    
 
-?>
+    ?>
