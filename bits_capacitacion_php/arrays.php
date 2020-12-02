@@ -1,6 +1,8 @@
 <?php
 
-    //-----asiganacion clasica de un vector
+    /**
+     * Asignacion clasica de un vector
+     */
     $vector[0] = 1;
     $vector[1] = 2;
     $vector[2] = 3;
@@ -25,7 +27,9 @@
 
     //---------------suma del contenido del arreglo 
 
-    $suma = $vector1[0] + $vector1[1] + $vector1[2] + $vector1[3] + $vector1[4] + $vector1[5];
+    $suma = $vector1[0] + $vector1[1] + 
+    $vector1[2] + $vector1[3] +
+    $vector1[4] + $vector1[5];
     
     echo "La suma del contenido del vector1 es: " . $suma;
 ?>
