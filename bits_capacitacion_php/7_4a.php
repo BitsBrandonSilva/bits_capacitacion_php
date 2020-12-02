@@ -1,14 +1,30 @@
 <?php
 
-    abstract class Pet {
+/**
+ * Ejercicio 7_4a
+ */
 
-        public $age = "2";
+/**
+ * Clase pet
+ */
+abstract class Pet{
 
-        public function __construct($age) {
-            $this->age = $age;
-        }
+    public $age = "2";
 
-        abstract public function feed($quantity);
+    /**
+     * Funcion constructor
+     */
+    public function __construct($age)
+    {
+        $this->age = $age;
     }
+
+    /**
+     * Funcion abstracta Feed
+     * 
+     * @return function
+     */
+    abstract public function feed($quantity);
+}
 
 ?>
