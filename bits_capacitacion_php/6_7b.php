@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * Ejercicio 6_7b
+     */
+
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $country = $_POST["country"];
@@ -19,11 +23,13 @@
     echo "Apellido: " . $lastname . "<br>";
 
     //--------------------punto5
-    if ($username = $coincidencia1 && $password = $coincidencia2) {
-       print md5($password = $_POST["password"]);
-    }else {
-        //--------------------punto4
-        echo "El nombre de usuario '" . $username = $_POST["username"] . "' (No es valido) <br>";
-        echo "La contraseña '" . $password . "' (No es valido) <br>";
-    };
+if ($username = $coincidencia1 && $password = $coincidencia2) {
+    print md5($password = $_POST["password"]);
+} else {
+    //--------------------punto4
+    echo "El nombre de usuario '" . $username = $_POST["username"] 
+    . "' (No es valido) <br>";
+
+    echo "La contraseña '" . $password . "' (No es valido) <br>";
+};
 ?>
