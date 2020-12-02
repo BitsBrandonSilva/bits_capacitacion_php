@@ -7,6 +7,9 @@
 </head>
 <body>
     <?php
+        /**
+         * Ejercicio 6_8a-login
+         */
        echo "El usuario " . $username = $_POST["username"] . " esta en sesion <br>";
     ?>
     
