@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * Foreach
+     */
+
     $prefijos = [
         "Alemania" => 49,
         "Argentina" => 54,
@@ -7,9 +11,10 @@
         "España" => 34,
         "Mexico" => 52
     ];
-?>
+    ?>
 
-<h3>foreach se utiliza para recorrer arrays asociativos sin necesidad de utilizar índices.</h3>
+<h3>foreach se utiliza para recorrer arrays 
+asociativos sin necesidad de utilizar índices.</h3>
 
 <table>
     <tr>
@@ -17,11 +22,11 @@
         <th>Prefijo</th>
     </tr>
     <?php
-        foreach ($prefijos as $clave => $valor) {
-            echo "<tr>";
-            echo "<td>$clave</td>";
-            echo "<td>$valor</td>";
-            echo "</tr>";
-        }
+    foreach ($prefijos as $clave => $valor) {
+        echo "<tr>";
+        echo "<td>$clave</td>";
+        echo "<td>$valor</td>";
+        echo "</tr>";
+    }
     ?>
 </table>
