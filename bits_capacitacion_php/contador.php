@@ -1,6 +1,9 @@
 <?php
 
-    include("libreria.php");
+    /**
+     * Contador
+     */
+    require "libreria.php";
 
     $contador1 = 0;
 
