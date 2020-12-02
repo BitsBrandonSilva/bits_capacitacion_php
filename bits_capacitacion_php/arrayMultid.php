@@ -1,6 +1,8 @@
 <?php
 
-    //-------------Array forma 1
+    /**
+     * Array forma 1
+     */
     $bands = [
         [1, "Municipal Waste", 5 , "Metal"],
         [2, "Power Trip", 5 , "Metal"],
@@ -66,7 +68,9 @@
         ]
     ];
 
-    //----------------Array forma 4 indice asociativo usando el identificador de cada arreglo
+    /**
+     * Array forma 4 indice asociativo usando el identificador de cada arreglo
+     */
     $bicicletas = [
         11 => [
             "identificador" => 11,
@@ -90,7 +94,7 @@
         ],
     ];
 
-?>
+    ?>
 
 <h3>Tabla 1 / Array1</h3>
 <table>
