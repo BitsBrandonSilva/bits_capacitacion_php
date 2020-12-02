@@ -1,5 +1,7 @@
 <?php
-    //-------------Asignacion de variables numeros y cadenas de textos
+    /**
+     * Asignacion de variables numeros y cadenas de textos
+     */
     $numero = 31;
     $nombre = "Nicholas";
     $apellido = "Silva";
