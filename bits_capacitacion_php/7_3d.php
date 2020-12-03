@@ -11,63 +11,30 @@
     require '7_3c.php';
 
     //---------------------------------Se crea Objeto1
-    $motorbaike1 = new Motorbike();
-    $motorbaike1->setBrand("Ferrari");
-    $motorbaike1->setSeats(2);
-    $motorbaike1->setLicensePlate("VEC38B");
-    $motorbaike1->setFuelLevel(10);
-    $motorbaike1->setCurrentSpeed(1);
-    $motorbaike1->setState('On');
+    $motorbaike1 = new Motorbike("Yamaha", 2, "VEC38B", 10, 1);
 
-    print $motorbaike1->acceleration(
-        $motorbaike1->getCurrentSpeed(), $motorbaike1->getFuelLevel()
-    ) . "<br>";
-
-    print $motorbaike1->acceleration(
-        $motorbaike1->getCurrentSpeed(), $motorbaike1->getFuelLevel(), 4
-    ) . "<br>";
-
-    print $motorbaike1->acceleration(
-        $motorbaike1->getCurrentSpeed(), $motorbaike1->getFuelLevel(), 5
-    ) . "<br>";
+for ($i = $motorbaike1->getCurrentSpeed(); $i < 6; $i++) {
+    print $motorbaike1->accelerate($i) . "<br>";
+}
     
-    print $motorbaike1->slowDown(6) . "<br>";
-    print $motorbaike1->slowDown(5) . "<br>";
-    print $motorbaike1->slowDown(4) . "<br>";
-    print $motorbaike1->slowDown(3) . "<br>";
-    print $motorbaike1->slowDown(2) . "<br>";
-    print $motorbaike1->slowDown(1) . "<br>";
-    print $motorbaike1->slowDown(0) . "<br>";
-    print $motorbaike1->stopEngine(0, 'On') . "<br><br>";
+for ($j = $i; $j >= 0; $j--) {
+    print $motorbaike1->slowDown($j) . "<br>";
+}
 
     //---------------------------------Se crea Objeto2
-    $truck1 = new Truck();
-    $truck1->setBrand("Toyota");
-    $truck1->setSeats(2);
-    $truck1->setLicensePlate("TEC31N");
+    $truck1 = new Truck("Toyota", 2, "TEC31N", 7, 1);
     $truck1->setFuelCapacity(10);
-    $truck1->setFuelLevel(5);
-    $truck1->setCurrentSpeed(1);
-    $truck1->setState('On');
 
     print $truck1->fillTank(
         $truck1->getFuelCapacity(), $truck1->getFuelLevel(), 1
     ) . "<br>";
 
-    print $truck1->accelerate(
-        $truck1->getCurrentSpeed(), $truck1->getFuelLevel(), 1
-    ) . "<br>";
-
-    print $truck1->accelerate(
-        $truck1->getCurrentSpeed(), $truck1->getFuelLevel(), 2
-    ) . "<br>";
-
-    print $truck1->accelerate(
-        $truck1->getCurrentSpeed(), $truck1->getFuelLevel(), 3
-    ) . "<br>";
+    for ($i = $truck1->getCurrentSpeed(); $i < 4; $i++) {
+        print $truck1->accelerate($i) . "<br>";
+    }
 
     //---------------------------------Se obtiene lista de Vehiculos
-    $car1 = new Car();
+    $car1 = new Car("Ferrari", 2, "TEC31N", 10, 1);
     print $car1->getType() . "<br>";
     print $motorbaike1->getType() . "<br>";
     print $truck1->getType() . "<br>";
