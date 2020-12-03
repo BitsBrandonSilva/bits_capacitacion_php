@@ -9,7 +9,8 @@
     /**
      * Clase Vehicle
      */
-class Vehicle {
+class Vehicle
+{
     public $brand = '';
     public $seats = '';
     public $fuel_capacity = '0';
@@ -17,6 +18,19 @@ class Vehicle {
     protected $fuel_level = '0';
     protected $current_speed = '0';
     protected $state = 'Off';
+
+    /**
+     * Funcion constructor
+     */
+    public function __construct(
+        $brand, $seats, $license_plate, $fuel_level, $current_speed
+    ) {
+        $this->brand = $brand;
+        $this->seats = $seats;
+        $this->license_plate = $license_plate;
+        $this->fuel_level = $fuel_level;
+        $this->current_speed = $current_speed;
+    }
 
     /**
      * Funcion getbrand
@@ -181,19 +195,19 @@ class Vehicle {
      * 
      * @return accelerate
      */
-    public function accelerate($current_speed, $fuel_level, $acceleration = false)
+    public function accelerate($acceleration = 1)
     {
         if ($acceleration > 0) {
-            $current_speed = $current_speed + $acceleration;
-            $fuel_level = $fuel_level - $acceleration;
-            return "El vehiculo " . $this->license_plate 
+            $current_speed = $this->getCurrentSpeed() + $acceleration;
+            $fuel_level = $this->getFuelLevel() - $acceleration;
+            return "El vehiculo " . $this->getLicensePlate() 
             . " ha incrementado la velocidad en " 
             . $acceleration . ". La velocidad acutal es " . $current_speed . 
             ". El nivel de combustible es " . $fuel_level;
         } else {
-            $current_speed++;
-            $fuel_level--;
-            return "El vehiculo " . $this->license_plate 
+            $current_speed = $this->getCurrentSpeed() + 1;
+            $fuel_level = $this->getFuelLevel() - 1;
+            return "El vehiculo " . $this->getLicensePlate()
             . " ha incrementado la velocidad en " 
             . $acceleration . ". La velocidad acutal es " . $current_speed . 
             ". El nivel de combustible es " . $fuel_level;
@@ -209,10 +223,10 @@ class Vehicle {
     public function slowDown($current_speed)
     {
         if ($current_speed == 0) {
-            return "El vehiculo " . $this->license_plate . " Se ha detenido.";
+            return "El vehiculo " . $this->getLicensePlate() . " Se ha detenido.";
         } else {
             $current_speed--;
-            return "El vehiculo " . $this->license_plate . 
+            return "El vehiculo " . $this->getLicensePlate() . 
             " ha decrementado su velocidad. La velocidad actual es " 
             . $current_speed;
         };
