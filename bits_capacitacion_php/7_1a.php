@@ -13,21 +13,22 @@ class Vehicle
 {
     public $brand = '';
     public $seats = '';
-    public $fuel_capacity = '0';
+    public $fuel_capacity = 0;
     public $license_plate = '';
-    protected $fuel_level = '0';
-    protected $current_speed = '0';
+    protected $fuel_level = 0;
+    protected $current_speed = 0;
     protected $state = 'Off';
 
     /**
      * Funcion constructor
      */
     public function __construct(
-        $brand, $seats, $license_plate, $fuel_level, $current_speed
+        $brand, $seats, $license_plate, $fuel_capacity, $fuel_level, $current_speed
     ) {
         $this->brand = $brand;
         $this->seats = $seats;
         $this->license_plate = $license_plate;
+        $this->fuel_capacity;
         $this->fuel_level = $fuel_level;
         $this->current_speed = $current_speed;
     }
@@ -197,20 +198,20 @@ class Vehicle
      */
     public function accelerate($acceleration = 1)
     {
-        if ($acceleration > 0) {
-            $current_speed = $this->getCurrentSpeed() + $acceleration;
-            $fuel_level = $this->getFuelLevel() - $acceleration;
+        if ($acceleration >= 1 && $acceleration <= 5) {
+            $this->setCurrentSpeed($this->getCurrentSpeed() + $acceleration);
+            $this->setFuelLevel($this->getFuelLevel() - $acceleration);
             return "El vehiculo " . $this->getLicensePlate() 
             . " ha incrementado la velocidad en " 
-            . $acceleration . ". La velocidad acutal es " . $current_speed . 
-            ". El nivel de combustible es " . $fuel_level;
+            . $acceleration . ". La velocidad acutal es " . $this->current_speed . 
+            ". El nivel de combustible es " . $this->fuel_level;
         } else {
-            $current_speed = $this->getCurrentSpeed() + 1;
-            $fuel_level = $this->getFuelLevel() - 1;
+            $this->setCurrentSpeed($this->getCurrentSpeed() + 1);
+            $this->setFuelLevel($this->getFuelLevel() - 1);
             return "El vehiculo " . $this->getLicensePlate()
             . " ha incrementado la velocidad en " 
-            . $acceleration . ". La velocidad acutal es " . $current_speed . 
-            ". El nivel de combustible es " . $fuel_level;
+            . $acceleration . ". La velocidad acutal es " . $this->getCurrentSpeed() . 
+            ". El nivel de combustible es " . $this->getFuelLevel();
         }
         
     }
@@ -220,15 +221,15 @@ class Vehicle
      * 
      * @return slowDown
      */
-    public function slowDown($current_speed)
+    public function slowDown()
     {
-        if ($current_speed == 0) {
+        if ($this->getCurrentSpeed() < 1) {
             return "El vehiculo " . $this->getLicensePlate() . " Se ha detenido.";
         } else {
-            $current_speed--;
+            $this->setCurrentSpeed($this->getCurrentSpeed() - 1);
             return "El vehiculo " . $this->getLicensePlate() . 
             " ha decrementado su velocidad. La velocidad actual es " 
-            . $current_speed;
+            . $this->getCurrentSpeed();
         };
     }
 
@@ -239,11 +240,11 @@ class Vehicle
      */
     public function stopEngine($current_speed, $state)
     {
-        if ($current_speed == 0 && $state == 'On') {
+        if ($this->getCurrentSpeed() < 1 && $this->getState() == 'On') {
             return "El vehiculo " . $this->license_plate . " se ha apagado";
         } else {
             return "El vehiculo " . $this->license_plate 
-            . " ya estaba apagado " . $this->state;
+            . " ya estaba apagado " . $this->setState($this->getState());
         };
     }
 
@@ -254,14 +255,14 @@ class Vehicle
      */
     public function fillTank($fuel_capacity, $fuel_level, $quantity)
     {
-        $sum = $quantity + $fuel_level;
-        if ($sum <= $fuel_capacity && $sum <= $fuel_capacity) {
+        $this->setFuelLevel($quantity + $this->getFuelLevel());
+        if ($this->getFuelLevel() <= $this->getFuelCapacity()) {
             return "El vehiculo " . $this->license_plate . " se ha cargado con " 
-            . $quantity . " litro/s de combustible, nivel de combustible " . $sum 
-            . " Capacidad total " . $fuel_capacity;
+            . $quantity . " litro/s de combustible, nivel de combustible " . $this->getFuelLevel() 
+            . " Capacidad total " . $this->getFuelCapacity();
         } else {
-            if ($sum > $fuel_capacity) {
-                return "El deposito esta lleno " . $fuel_capacity;
+            if ($this->getFuelLevel() >= $this->getFuelCapacity()) {
+                return "El deposito esta lleno " . $this->getFuelCapacity();
             }
         }
     }
