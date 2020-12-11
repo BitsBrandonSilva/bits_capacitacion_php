@@ -35,10 +35,10 @@ class Truck extends Vehicles\Vehicle
      * 
      * @return slowDown
      */
-    public function slowDown($current_speed)
+    public function slowDownn()
     {
-        $current_speed = $current_speed - 0.5;
-        return "La velociadad se ha decrementado " . $current_speed;
+        $this->setCurrentSpeed($this->getCurrentSpeed() - 0.5);
+        return "La velociadad se ha decrementado " . $this->getCurrentSpeed();
     }
 }
 
