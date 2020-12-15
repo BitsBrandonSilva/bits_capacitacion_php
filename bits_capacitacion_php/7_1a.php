@@ -179,15 +179,15 @@ class Vehicle
      * 
      * @return startEngine
      */
-    public function startEngine($state)
+    public function startEngine()
     {
-        if ($state == 'Off') {
-            $state = 'On';
+        if ($this->getState() == 'Off') {
+            $this->setState('On');
             return "El vehiculo " . $this->license_plate 
-            . " se ha arrancado " . $state;
+            . " se ha arrancado " . $this->getState();
         } else {
             return "El vehiculo " . $this->license_plate 
-            . " ya estaba en marcha " . $state;
+            . " ya estaba en marcha " . $this->getState();
         };
     }
 
@@ -223,7 +223,7 @@ class Vehicle
      */
     public function slowDown()
     {
-        if ($this->getCurrentSpeed() < 1) {
+        if ($this->getCurrentSpeed() <= 1) {
             return "El vehiculo " . $this->getLicensePlate() . " Se ha detenido.";
         } else {
             $this->setCurrentSpeed($this->getCurrentSpeed() - 1);
@@ -238,13 +238,14 @@ class Vehicle
      * 
      * @return stopEngine
      */
-    public function stopEngine($current_speed, $state)
+    public function stopEngine()
     {
-        if ($this->getCurrentSpeed() < 1 && $this->getState() == 'On') {
+        if ($this->getCurrentSpeed() <= 1 && $this->getState() == 'On') {
+            $this->setState('Off');
             return "El vehiculo " . $this->license_plate . " se ha apagado";
         } else {
             return "El vehiculo " . $this->license_plate 
-            . " ya estaba apagado " . $this->setState($this->getState());
+            . " ya estaba apagado " . $this->getState();
         };
     }
 
