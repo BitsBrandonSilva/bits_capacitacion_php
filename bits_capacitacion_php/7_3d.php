@@ -23,10 +23,7 @@
         print $motorbaike1->slowDown() . "<br>";
     }
 
-    print $motorbaike1->stopEngine(
-        $motorbaike1->getCurrentSpeed(), 
-        $motorbaike1->getState()
-        ) . "<br>";
+    print $motorbaike1->stopEngine() . "<br>";
 
 
     //---------------------------------Se crea Objeto2
@@ -45,8 +42,5 @@
 
     //---------------------------------Se obtiene lista de Vehiculos
     $car1 = new Car("Ferrari", 2, "TEC31N", 10, 10, 1);
-    print $car1->getType() . "<br>";
-    print $motorbaike1->getType() . "<br>";
-    print $truck1->getType() . "<br>";
-
+    
     ?>
