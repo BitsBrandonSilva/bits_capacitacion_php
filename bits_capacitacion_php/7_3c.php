@@ -8,26 +8,18 @@
      */
 class Truck extends Vehicles\Vehicle
 {
-    public $type = "Truck";
-
     /**
-     * Funcion getType
+     * Funcion constructor Truck
      * 
      * @return type
      */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Funcion setType
-     * 
-     * @return type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
+    public function __construc(
+        $brand, $seats, $license_plate, $fuel_capacity, $fuel_level, $current_speed
+        ) {
+        parent::__construc(
+            $brand, $seats, $license_plate, $fuel_capacity, $fuel_level, $current_speed
+        );
+        $this->type = 'truck';
     }
 
     /**
@@ -35,7 +27,7 @@ class Truck extends Vehicles\Vehicle
      * 
      * @return slowDown
      */
-    public function slowDownn()
+    public function slowDown()
     {
         $this->setCurrentSpeed($this->getCurrentSpeed() - 0.5);
         return "La velociadad se ha decrementado " . $this->getCurrentSpeed();
