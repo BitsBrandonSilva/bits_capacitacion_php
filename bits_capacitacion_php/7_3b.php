@@ -12,27 +12,18 @@
      */
 class Car extends Carro\Vehicle
 {
-    
-    public $type = "Car";
-
     /**
-     * Funcion getType
+     * Funcion constructor Car
      * 
      * @return type
      */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Funcion setType
-     * 
-     * @return type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
+    public function __construc(
+        $brand, $seats, $license_plate, $fuel_capacity, $fuel_level, $current_speed
+        ) {
+        parent::__construc(
+            $brand, $seats, $license_plate, $fuel_capacity, $fuel_level, $current_speed
+        );
+        $this->type = 'car';
     }
 }
 
